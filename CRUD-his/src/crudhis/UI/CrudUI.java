@@ -5,6 +5,8 @@ import crudhis.AnnullaEvent;
 import crudhis.AutomaCrud;
 import crudhis.Automabile;
 import crudhis.ConfermaEvent;
+import crudhis.ModificaEvent;
+import crudhis.RicercaEvent;
 import crudhis.RimuoviEvent;
 import crudhis.SelezionaEvent;
 
@@ -83,21 +85,21 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         //Form text fields
         jTextFieldCodice.setVisible(true);
         jTextFieldDescrizione.setVisible(true);
-        jTextFieldCodice.setEnabled(false);
-        jTextFieldDescrizione.setEnabled(false);
+        jTextFieldCodice.setEnabled(true);
+        jTextFieldDescrizione.setEnabled(true);
         //Form Buttons
-        jButtonModifica.setVisible(true);
+        jButtonModifica.setVisible(false);
         jButtonConferma.setVisible(true);
         jButtonAnnulla.setVisible(true);
-        jButtonRimuovi.setVisible(true);
+        jButtonRimuovi.setVisible(false);
         //Nuova Button
-        jButtonNuova.setVisible(true);
+        jButtonNuova.setVisible(false);
         //Ricerca
-        jButtonCerca.setVisible(true);
-        jTextFieldCercaPerCodice.setVisible(true);
+        jButtonCerca.setVisible(false);
+        jTextFieldCercaPerCodice.setVisible(false);
         //table
-        jButtonSeleziona.setVisible(true);
-        jTable.setVisible(true);
+        jButtonSeleziona.setVisible(false);
+        jTable.setVisible(false);
     }
 
     @Override
@@ -183,6 +185,11 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         });
 
         jButtonModifica.setText("Modifica");
+        jButtonModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonModificaActionPerformed(evt);
+            }
+        });
 
         jButtonConferma.setText("Conferma");
         jButtonConferma.addActionListener(new java.awt.event.ActionListener() {
@@ -299,8 +306,13 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     }//GEN-LAST:event_jButtonSelezionaActionPerformed
 
     private void jButtonCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCercaActionPerformed
-        
+        automa.next(new RicercaEvent());
+        jTextFieldCercaPerCodice.setText("");
     }//GEN-LAST:event_jButtonCercaActionPerformed
+
+    private void jButtonModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonModificaActionPerformed
+        automa.next(new ModificaEvent());
+    }//GEN-LAST:event_jButtonModificaActionPerformed
 
     /**
      * @param args the command line arguments

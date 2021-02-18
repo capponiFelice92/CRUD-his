@@ -19,13 +19,12 @@ public class AutomaCrud implements State {
     private class Ricerca implements State {
 
         public Ricerca() {
-
         }
 
         @Override
         public void next(Event e) {
             if (e instanceof RicercaEvent) {
-                ui.entraStatoAggiungi();
+                System.out.println("Tabella aggiornata");
             } else if (e instanceof AddEvent) {
                 stato = new Aggiungi();
             } else if (e instanceof SelezionaEvent) {
@@ -70,6 +69,7 @@ public class AutomaCrud implements State {
             } else if (e instanceof SelezionaEvent) {
                 
             } else if (e instanceof ModificaEvent) {
+                ui.entraStatoModifica();
                 stato = new Modifica();
             } else if (e instanceof RimuoviEvent) {
                 stato = new Rimuovi();
@@ -104,8 +104,10 @@ public class AutomaCrud implements State {
         public void next(Event e) {
             if (e instanceof ConfermaEvent) {
                 stato = new Visualizza();
+                ui.entraStatoVisualizza();
             } else if (e instanceof AnnullaEvent) {
                 stato = new Visualizza();
+                ui.entraStatoVisualizza();
             } else {
                 System.out.println("errore");
             }
