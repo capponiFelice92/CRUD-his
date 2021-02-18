@@ -14,8 +14,10 @@ public class AutomaCrud implements State {
         this.ui = ui;
         stato = new Ricerca();
     }
-    
-    
+
+    public State getStato() {
+        return stato;
+    }
 
     private class Ricerca implements State {
 
@@ -87,11 +89,11 @@ public class AutomaCrud implements State {
 
         @Override
         public void next(Event e) {
-            if(e instanceof ConfermaEvent){
+            if (e instanceof ConfermaEvent) {
                 stato = new Visualizza();
-            }else if(e instanceof AnnullaEvent){
+            } else if (e instanceof AnnullaEvent) {
                 stato = new Visualizza();
-            }else{
+            } else {
                 System.out.println("errore");
             }
         }

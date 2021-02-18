@@ -155,6 +155,11 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonCerca.setText("Cerca");
 
         jButtonNuova.setText("Nuova");
+        jButtonNuova.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNuovaActionPerformed(evt);
+            }
+        });
 
         jButtonModifica.setText("Modifica");
 
@@ -237,6 +242,10 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     private void jButtonRimuoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRimuoviActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRimuoviActionPerformed
+
+    private void jButtonNuovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuovaActionPerformed
+        //if ( automa.getStato() instanceof Ricerca){}
+    }//GEN-LAST:event_jButtonNuovaActionPerformed
 
     /**
      * @param args the command line arguments
