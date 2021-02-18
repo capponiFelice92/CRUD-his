@@ -5,6 +5,8 @@ import crudhis.AnnullaEvent;
 import crudhis.AutomaCrud;
 import crudhis.Automabile;
 import crudhis.ConfermaEvent;
+import crudhis.RimuoviEvent;
+import crudhis.SelezionaEvent;
 
 public class CrudUI extends javax.swing.JFrame implements Automabile {
 
@@ -25,6 +27,8 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jTextFieldCercaPerCodice.setVisible(true);
         jTextFieldCodice.setVisible(false);
         jTextFieldDescrizione.setVisible(false);
+        jTextFieldCodice.setEnabled(true);
+        jTextFieldDescrizione.setEnabled(true);
 
         //table
         jTable.setVisible(true);
@@ -45,6 +49,8 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jTextFieldCercaPerCodice.setVisible(false);
         jTextFieldCodice.setVisible(true);
         jTextFieldDescrizione.setVisible(true);
+        jTextFieldCodice.setEnabled(true);
+        jTextFieldDescrizione.setEnabled(true);
 
         //table
         jTable.setVisible(false);
@@ -52,61 +58,68 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
 
     @Override
     public void entraStatoVisualizza() {
-        //Buttons
-        jButtonConferma.setVisible(true);
-        jButtonRimuovi.setVisible(true);
-        jButtonAnnulla.setVisible(true);
-        jButtonSeleziona.setVisible(true);
-        jButtonCerca.setVisible(true);
-        jButtonModifica.setVisible(true);
-        jButtonNuova.setVisible(true);
-
-        //Input fields
-        jTextFieldCercaPerCodice.setVisible(true);
+        //Form text fields
         jTextFieldCodice.setVisible(true);
         jTextFieldDescrizione.setVisible(true);
-
+        jTextFieldCodice.setEnabled(false);
+        jTextFieldDescrizione.setEnabled(false);
+        //Form Buttons
+        jButtonModifica.setVisible(true);
+        jButtonConferma.setVisible(false);
+        jButtonAnnulla.setVisible(false);
+        jButtonRimuovi.setVisible(true);
+        //Nuova Button
+        jButtonNuova.setVisible(true);
+        //Ricerca
+        jButtonCerca.setVisible(true);
+        jTextFieldCercaPerCodice.setVisible(true);
         //table
+        jButtonSeleziona.setVisible(true);
         jTable.setVisible(true);
     }
 
     @Override
     public void entraStatoModifica() {
-        //Buttons
-        jButtonConferma.setVisible(true);
-        jButtonRimuovi.setVisible(true);
-        jButtonAnnulla.setVisible(true);
-        jButtonSeleziona.setVisible(true);
-        jButtonCerca.setVisible(true);
-        jButtonModifica.setVisible(true);
-        jButtonNuova.setVisible(true);
-
-        //Input fields
-        jTextFieldCercaPerCodice.setVisible(true);
+        //Form text fields
         jTextFieldCodice.setVisible(true);
         jTextFieldDescrizione.setVisible(true);
-
+        jTextFieldCodice.setEnabled(false);
+        jTextFieldDescrizione.setEnabled(false);
+        //Form Buttons
+        jButtonModifica.setVisible(true);
+        jButtonConferma.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonRimuovi.setVisible(true);
+        //Nuova Button
+        jButtonNuova.setVisible(true);
+        //Ricerca
+        jButtonCerca.setVisible(true);
+        jTextFieldCercaPerCodice.setVisible(true);
         //table
+        jButtonSeleziona.setVisible(true);
         jTable.setVisible(true);
     }
 
     @Override
     public void entraStatoRimuovi() {
-        //Buttons
-        jButtonConferma.setVisible(true);
-        jButtonRimuovi.setVisible(true);
-        jButtonAnnulla.setVisible(true);
-        jButtonSeleziona.setVisible(true);
-        jButtonCerca.setVisible(true);
-        jButtonModifica.setVisible(true);
-        jButtonNuova.setVisible(true);
-
-        //Input fields
-        jTextFieldCercaPerCodice.setVisible(true);
+        //Form text fields
         jTextFieldCodice.setVisible(true);
         jTextFieldDescrizione.setVisible(true);
+        jTextFieldCodice.setEnabled(false);
+        jTextFieldDescrizione.setEnabled(false);
 
+        //Form Buttons
+        jButtonModifica.setVisible(false);
+        jButtonConferma.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonRimuovi.setVisible(false);
+        //Nuova Button
+        jButtonNuova.setVisible(false);
+        //Ricerca
+        jButtonCerca.setVisible(false);
+        jTextFieldCercaPerCodice.setVisible(false);
         //table
+        jButtonSeleziona.setVisible(true);
         jTable.setVisible(true);
     }
 
@@ -156,6 +169,11 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jScrollPane1.setViewportView(jTable);
 
         jButtonCerca.setText("Cerca");
+        jButtonCerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCercaActionPerformed(evt);
+            }
+        });
 
         jButtonNuova.setText("Nuova");
         jButtonNuova.addActionListener(new java.awt.event.ActionListener() {
@@ -188,6 +206,11 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         });
 
         jButtonSeleziona.setText("Seleziona");
+        jButtonSeleziona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSelezionaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -253,7 +276,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonRimuoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRimuoviActionPerformed
-        // TODO add your handling code here:
+        automa.next(new RimuoviEvent());
     }//GEN-LAST:event_jButtonRimuoviActionPerformed
 
     private void jButtonNuovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuovaActionPerformed
@@ -267,6 +290,17 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     private void jButtonConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfermaActionPerformed
         automa.next(new ConfermaEvent());
     }//GEN-LAST:event_jButtonConfermaActionPerformed
+
+    private void jButtonSelezionaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSelezionaActionPerformed
+        automa.next(new SelezionaEvent());
+        //simula popola form
+        jTextFieldCodice.setText("xxxxxx");
+        jTextFieldDescrizione.setText("xxxxxx");
+    }//GEN-LAST:event_jButtonSelezionaActionPerformed
+
+    private void jButtonCercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCercaActionPerformed
+        
+    }//GEN-LAST:event_jButtonCercaActionPerformed
 
     /**
      * @param args the command line arguments

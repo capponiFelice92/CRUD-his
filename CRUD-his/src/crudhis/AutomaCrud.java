@@ -13,6 +13,7 @@ public class AutomaCrud implements State {
     public AutomaCrud(Automabile ui) {
         this.ui = ui;
         stato = new Ricerca();
+        ui.entraStatoRicerca();
     }
 
     private class Ricerca implements State {
@@ -28,6 +29,7 @@ public class AutomaCrud implements State {
             } else if (e instanceof AddEvent) {
                 stato = new Aggiungi();
             } else if (e instanceof SelezionaEvent) {
+                ui.entraStatoVisualizza();
                 stato = new Visualizza();
             } else {
                 System.out.println("errore");
@@ -64,12 +66,14 @@ public class AutomaCrud implements State {
         public void next(Event e) {
             if (e instanceof AddEvent) {
                 stato = new Aggiungi();
+                ui.entraStatoAggiungi();
             } else if (e instanceof SelezionaEvent) {
-
+                
             } else if (e instanceof ModificaEvent) {
                 stato = new Modifica();
             } else if (e instanceof RimuoviEvent) {
                 stato = new Rimuovi();
+                ui.entraStatoRimuovi();
             } else if (e instanceof RicercaEvent) {
                 stato = new Ricerca();
             } else {
@@ -84,8 +88,10 @@ public class AutomaCrud implements State {
         public void next(Event e) {
             if (e instanceof ConfermaEvent) {
                 stato = new Ricerca();
+                ui.entraStatoRicerca();
             } else if (e instanceof AnnullaEvent) {
                 stato = new Visualizza();
+                ui.entraStatoVisualizza();
             } else {
                 System.out.println("errore");
             }

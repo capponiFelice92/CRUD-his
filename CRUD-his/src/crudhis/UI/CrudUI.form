@@ -123,6 +123,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cerca"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCercaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonNuova">
       <Properties>
@@ -169,6 +172,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Seleziona"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSelezionaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
