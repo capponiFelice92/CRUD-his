@@ -7,7 +7,7 @@ public class AutomaCrud implements State {
 
     @Override
     public void next(Event e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        stato.next(e);
     }
 
     public AutomaCrud(Automabile ui) {
@@ -15,16 +15,16 @@ public class AutomaCrud implements State {
         stato = new Ricerca();
     }
 
-    public State getStato() {
-        return stato;
-    }
-
     private class Ricerca implements State {
+
+        public Ricerca() {
+
+        }
 
         @Override
         public void next(Event e) {
             if (e instanceof RicercaEvent) {
-
+                ui.entraStatoAggiungi(stato);
             } else if (e instanceof AddEvent) {
                 stato = new Aggiungi();
             } else if (e instanceof SelezionaEvent) {
@@ -39,6 +39,11 @@ public class AutomaCrud implements State {
 
     private class Aggiungi implements State {
 
+        public Aggiungi() {
+            ui.entraStatoAggiungi(stato);
+        }
+
+        
         @Override
         public void next(Event e) {
             if (e instanceof ConfermaEvent) {

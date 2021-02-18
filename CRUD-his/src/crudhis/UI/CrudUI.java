@@ -1,7 +1,9 @@
 package crudhis.UI;
 
+import crudhis.AddEvent;
 import crudhis.AutomaCrud;
 import crudhis.Automabile;
+import crudhis.State;
 
 public class CrudUI extends javax.swing.JFrame implements Automabile {
 
@@ -28,7 +30,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     }
 
     @Override
-    public void entraStatoAggiungi() {
+    public void entraStatoAggiungi(State stato) {
         //Buttons
         jButtonConferma.setVisible(true);
         jButtonRimuovi.setVisible(false);
@@ -244,7 +246,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     }//GEN-LAST:event_jButtonRimuoviActionPerformed
 
     private void jButtonNuovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuovaActionPerformed
-        //if ( automa.getStato() instanceof Ricerca){}
+        automa.next(new AddEvent());
     }//GEN-LAST:event_jButtonNuovaActionPerformed
 
     /**
