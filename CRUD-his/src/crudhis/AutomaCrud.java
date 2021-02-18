@@ -48,6 +48,7 @@ public class AutomaCrud implements State {
         public void next(Event e) {
             if (e instanceof ConfermaEvent) {
                 stato = new Visualizza();
+                ui.entraStatoVisualizza();
             } else if (e instanceof AnnullaEvent) {
                 stato = new Ricerca();
                 ui.entraStatoRicerca();

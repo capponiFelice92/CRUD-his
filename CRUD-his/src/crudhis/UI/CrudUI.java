@@ -4,6 +4,7 @@ import crudhis.AddEvent;
 import crudhis.AnnullaEvent;
 import crudhis.AutomaCrud;
 import crudhis.Automabile;
+import crudhis.ConfermaEvent;
 
 public class CrudUI extends javax.swing.JFrame implements Automabile {
 
@@ -166,6 +167,11 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         jButtonModifica.setText("Modifica");
 
         jButtonConferma.setText("Conferma");
+        jButtonConferma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfermaActionPerformed(evt);
+            }
+        });
 
         jButtonAnnulla.setText("Annulla");
         jButtonAnnulla.addActionListener(new java.awt.event.ActionListener() {
@@ -257,6 +263,10 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     private void jButtonAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnullaActionPerformed
         automa.next(new AnnullaEvent());
     }//GEN-LAST:event_jButtonAnnullaActionPerformed
+
+    private void jButtonConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfermaActionPerformed
+        automa.next(new ConfermaEvent());
+    }//GEN-LAST:event_jButtonConfermaActionPerformed
 
     /**
      * @param args the command line arguments
