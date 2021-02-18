@@ -3,11 +3,19 @@ package crudhis;
 public class AutomaCrud implements State {
 
     private State stato;
+    private Automabile ui;
 
     @Override
     public void next(Event e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public AutomaCrud(Automabile ui) {
+        this.ui = ui;
+        stato = new Ricerca();
+    }
+    
+    
 
     private class Ricerca implements State {
 

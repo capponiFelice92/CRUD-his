@@ -5,17 +5,123 @@
  */
 package crudhis.UI;
 
+import crudhis.AutomaCrud;
+import crudhis.Automabile;
+
 /**
  *
  * @author Matteo
  */
-public class CrudUI extends javax.swing.JFrame {
+public class CrudUI extends javax.swing.JFrame implements Automabile {
+
+    AutomaCrud automa;
+
+    @Override
+    public void entraStatoRicerca() {
+        //Buttons
+        jButtonConferma.setVisible(true);
+        jButtonRimuovi.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonSeleziona.setVisible(true);
+        jButtonCerca.setVisible(true);
+        jButtonModifica.setVisible(true);
+        jButtonNuova.setVisible(true);
+
+        //Input fields
+        jTextFieldCercaPerCodice.setVisible(true);
+        jTextFieldCodice.setVisible(true);
+        jTextFieldDescrizione.setVisible(true);
+
+        //table
+        jTable.setVisible(true);
+    }
+
+    @Override
+    public void entraStatoAggiungi() {
+        //Buttons
+        jButtonConferma.setVisible(true);
+        jButtonRimuovi.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonSeleziona.setVisible(true);
+        jButtonCerca.setVisible(true);
+        jButtonModifica.setVisible(true);
+        jButtonNuova.setVisible(true);
+
+        //Input fields
+        jTextFieldCercaPerCodice.setVisible(true);
+        jTextFieldCodice.setVisible(true);
+        jTextFieldDescrizione.setVisible(true);
+
+        //table
+        jTable.setVisible(true);
+    }
+
+    @Override
+    public void entraStatoVisualizza() {
+        //Buttons
+        jButtonConferma.setVisible(true);
+        jButtonRimuovi.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonSeleziona.setVisible(true);
+        jButtonCerca.setVisible(true);
+        jButtonModifica.setVisible(true);
+        jButtonNuova.setVisible(true);
+
+        //Input fields
+        jTextFieldCercaPerCodice.setVisible(true);
+        jTextFieldCodice.setVisible(true);
+        jTextFieldDescrizione.setVisible(true);
+
+        //table
+        jTable.setVisible(true);
+    }
+
+    @Override
+    public void entraStatoModifica() {
+     //Buttons
+        jButtonConferma.setVisible(true);
+        jButtonRimuovi.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonSeleziona.setVisible(true);
+        jButtonCerca.setVisible(true);
+        jButtonModifica.setVisible(true);
+        jButtonNuova.setVisible(true);
+
+        //Input fields
+        jTextFieldCercaPerCodice.setVisible(true);
+        jTextFieldCodice.setVisible(true);
+        jTextFieldDescrizione.setVisible(true);
+
+        //table
+        jTable.setVisible(true);
+    }
+
+    @Override
+    public void entraStatoRimuovi() {
+         //Buttons
+        jButtonConferma.setVisible(true);
+        jButtonRimuovi.setVisible(true);
+        jButtonAnnulla.setVisible(true);
+        jButtonSeleziona.setVisible(true);
+        jButtonCerca.setVisible(true);
+        jButtonModifica.setVisible(true);
+        jButtonNuova.setVisible(true);
+
+        //Input fields
+        jTextFieldCercaPerCodice.setVisible(true);
+        jTextFieldCodice.setVisible(true);
+        jTextFieldDescrizione.setVisible(true);
+
+        //table
+        jTable.setVisible(true);
+    }
 
     /**
      * Creates new form CrudUI
      */
     public CrudUI() {
         initComponents();
+        automa = new AutomaCrud(this);
     }
 
     /**
@@ -28,20 +134,21 @@ public class CrudUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jTable = new javax.swing.JTable();
+        jTextFieldCercaPerCodice = new javax.swing.JTextField();
+        jButtonCerca = new javax.swing.JButton();
+        jButtonNuova = new javax.swing.JButton();
+        jTextFieldCodice = new javax.swing.JTextField();
+        jTextFieldDescrizione = new javax.swing.JTextField();
+        jButtonModifica = new javax.swing.JButton();
+        jButtonConferma = new javax.swing.JButton();
+        jButtonAnnulla = new javax.swing.JButton();
+        jButtonRimuovi = new javax.swing.JButton();
+        jButtonSeleziona = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -52,56 +159,60 @@ public class CrudUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTable);
 
-        jTextField1.setText("jTextField1");
+        jButtonCerca.setText("Cerca");
 
-        jButton1.setText("jButton1");
+        jButtonNuova.setText("Nuova");
 
-        jButton2.setText("jButton2");
+        jButtonModifica.setText("Modifica");
 
-        jTextField2.setText("jTextField2");
+        jButtonConferma.setText("Conferma");
 
-        jTextField3.setText("jTextField3");
+        jButtonAnnulla.setText("Annulla");
 
-        jButton3.setText("Modifica");
+        jButtonRimuovi.setText("Rimuovi");
+        jButtonRimuovi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRimuoviActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Conferma");
-
-        jButton5.setText("Annulla");
-
-        jButton6.setText("jButton6");
+        jButtonSeleziona.setText("Seleziona");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonSeleziona, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButtonModifica)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButtonConferma)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButtonAnnulla)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonRimuovi))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldCodice, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton1))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6)))
+                                    .addComponent(jTextFieldDescrizione, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonNuova))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jTextFieldCercaPerCodice, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButtonCerca))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(139, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -109,26 +220,32 @@ public class CrudUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonNuova)
+                    .addComponent(jTextFieldCodice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldDescrizione, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jButtonModifica)
+                    .addComponent(jButtonConferma)
+                    .addComponent(jButtonAnnulla)
+                    .addComponent(jButtonRimuovi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(36, 36, 36)
+                    .addComponent(jTextFieldCercaPerCodice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCerca))
+                .addGap(2, 2, 2)
+                .addComponent(jButtonSeleziona)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonRimuoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRimuoviActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRimuoviActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,16 +283,17 @@ public class CrudUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonAnnulla;
+    private javax.swing.JButton jButtonCerca;
+    private javax.swing.JButton jButtonConferma;
+    private javax.swing.JButton jButtonModifica;
+    private javax.swing.JButton jButtonNuova;
+    private javax.swing.JButton jButtonRimuovi;
+    private javax.swing.JButton jButtonSeleziona;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTable jTable;
+    private javax.swing.JTextField jTextFieldCercaPerCodice;
+    private javax.swing.JTextField jTextFieldCodice;
+    private javax.swing.JTextField jTextFieldDescrizione;
     // End of variables declaration//GEN-END:variables
 }
