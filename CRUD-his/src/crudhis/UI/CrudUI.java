@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package crudhis.UI;
 
 import crudhis.AutomaCrud;
 import crudhis.Automabile;
 
-/**
- *
- * @author Matteo
- */
 public class CrudUI extends javax.swing.JFrame implements Automabile {
 
     AutomaCrud automa;
@@ -19,18 +10,18 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     @Override
     public void entraStatoRicerca() {
         //Buttons
-        jButtonConferma.setVisible(true);
-        jButtonRimuovi.setVisible(true);
-        jButtonAnnulla.setVisible(true);
+        jButtonConferma.setVisible(false);
+        jButtonRimuovi.setVisible(false);
+        jButtonAnnulla.setVisible(false);
         jButtonSeleziona.setVisible(true);
         jButtonCerca.setVisible(true);
-        jButtonModifica.setVisible(true);
+        jButtonModifica.setVisible(false);
         jButtonNuova.setVisible(true);
 
         //Input fields
         jTextFieldCercaPerCodice.setVisible(true);
-        jTextFieldCodice.setVisible(true);
-        jTextFieldDescrizione.setVisible(true);
+        jTextFieldCodice.setVisible(false);
+        jTextFieldDescrizione.setVisible(false);
 
         //table
         jTable.setVisible(true);
@@ -40,20 +31,20 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     public void entraStatoAggiungi() {
         //Buttons
         jButtonConferma.setVisible(true);
-        jButtonRimuovi.setVisible(true);
+        jButtonRimuovi.setVisible(false);
         jButtonAnnulla.setVisible(true);
-        jButtonSeleziona.setVisible(true);
-        jButtonCerca.setVisible(true);
-        jButtonModifica.setVisible(true);
-        jButtonNuova.setVisible(true);
+        jButtonSeleziona.setVisible(false);
+        jButtonCerca.setVisible(false);
+        jButtonModifica.setVisible(false);
+        jButtonNuova.setVisible(false);
 
         //Input fields
-        jTextFieldCercaPerCodice.setVisible(true);
+        jTextFieldCercaPerCodice.setVisible(false);
         jTextFieldCodice.setVisible(true);
         jTextFieldDescrizione.setVisible(true);
 
         //table
-        jTable.setVisible(true);
+        jTable.setVisible(false);
     }
 
     @Override
@@ -78,7 +69,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
 
     @Override
     public void entraStatoModifica() {
-     //Buttons
+        //Buttons
         jButtonConferma.setVisible(true);
         jButtonRimuovi.setVisible(true);
         jButtonAnnulla.setVisible(true);
@@ -98,7 +89,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
 
     @Override
     public void entraStatoRimuovi() {
-         //Buttons
+        //Buttons
         jButtonConferma.setVisible(true);
         jButtonRimuovi.setVisible(true);
         jButtonAnnulla.setVisible(true);
