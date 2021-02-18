@@ -50,6 +50,7 @@ public class AutomaCrud implements State {
                 stato = new Visualizza();
             } else if (e instanceof AnnullaEvent) {
                 stato = new Ricerca();
+                ui.entraStatoRicerca();
             } else {
                 System.out.println("errore");
             }
