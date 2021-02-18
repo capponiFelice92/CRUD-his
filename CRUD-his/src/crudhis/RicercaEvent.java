@@ -9,6 +9,6 @@ package crudhis;
  *
  * @author Userù
  */
-public class Annulla {
+public class RicercaEvent implements Event{
     
 }

@@ -7,8 +7,8 @@ package crudhis;
 
 /**
  *
- * @author Userù
+ * @author Hp Desktop
  */
-public class Add {
+public class ConfermaEvent implements Event{
     
 }

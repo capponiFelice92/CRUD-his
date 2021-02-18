@@ -9,6 +9,6 @@ package crudhis;
  *
  * @author Userù
  */
-public class Ricerca {
+public class AddEvent implements Event {
     
 }
