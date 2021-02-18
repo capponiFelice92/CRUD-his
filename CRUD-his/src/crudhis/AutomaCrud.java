@@ -24,7 +24,7 @@ public class AutomaCrud implements State {
         @Override
         public void next(Event e) {
             if (e instanceof RicercaEvent) {
-                ui.entraStatoAggiungi(stato);
+                ui.entraStatoAggiungi();
             } else if (e instanceof AddEvent) {
                 stato = new Aggiungi();
             } else if (e instanceof SelezionaEvent) {
@@ -40,7 +40,7 @@ public class AutomaCrud implements State {
     private class Aggiungi implements State {
 
         public Aggiungi() {
-            ui.entraStatoAggiungi(stato);
+            ui.entraStatoAggiungi();
         }
 
         

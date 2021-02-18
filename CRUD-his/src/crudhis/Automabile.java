@@ -4,7 +4,7 @@ public interface Automabile {
 
     void entraStatoRicerca();
 
-    void entraStatoAggiungi(State stato);
+    void entraStatoAggiungi();
 
     void entraStatoVisualizza();
 

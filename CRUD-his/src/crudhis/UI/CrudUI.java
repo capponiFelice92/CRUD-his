@@ -30,7 +30,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
     }
 
     @Override
-    public void entraStatoAggiungi(State stato) {
+    public void entraStatoAggiungi() {
         //Buttons
         jButtonConferma.setVisible(true);
         jButtonRimuovi.setVisible(false);
