@@ -1,6 +1,6 @@
 package crudhis;
 
-class AutomaCrud implements State {
+public class AutomaCrud implements State {
 
     private State stato;
     private Automabile ui;
@@ -11,7 +11,10 @@ class AutomaCrud implements State {
      */
     @Override
     public void next(Event e) {
+        System.out.println("Siamo nello stato " + stato);
+        System.out.println("Ricevuto evento " + e);
         stato.next(e);
+        System.out.println("Siamo arrivati nello stato " + stato + "\n");
     }
 
     /**
