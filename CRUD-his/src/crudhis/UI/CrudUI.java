@@ -288,6 +288,9 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
 
     private void jButtonNuovaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuovaActionPerformed
         automa.next(new AddEvent());
+        jTextFieldCodice.setText(null);
+        jTextFieldDescrizione.setText(null);
+        
     }//GEN-LAST:event_jButtonNuovaActionPerformed
 
     private void jButtonAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnullaActionPerformed
