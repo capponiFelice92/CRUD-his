@@ -1,9 +1,6 @@
-
 package crudhis;
 
-
-
 public interface State {
- 
-    void next (Event e);
+
+    void next(Event e);
 }

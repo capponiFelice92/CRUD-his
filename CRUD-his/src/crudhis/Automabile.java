@@ -2,6 +2,7 @@ package crudhis;
 
 public interface Automabile {
 
+    
     void entraStatoRicerca();
 
     void entraStatoAggiungi();

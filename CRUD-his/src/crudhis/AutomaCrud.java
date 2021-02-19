@@ -1,15 +1,23 @@
 package crudhis;
 
-public class AutomaCrud implements State {
+class AutomaCrud implements State {
 
     private State stato;
     private Automabile ui;
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void next(Event e) {
         stato.next(e);
     }
 
+    /**
+     *
+     * @param ui
+     */
     public AutomaCrud(Automabile ui) {
         this.ui = ui;
         stato = new Ricerca();
@@ -22,6 +30,7 @@ public class AutomaCrud implements State {
         }
 
         @Override
+
         public void next(Event e) {
             if (e instanceof RicercaEvent) {
                 System.out.println("Tabella aggiornata");
@@ -44,7 +53,6 @@ public class AutomaCrud implements State {
             ui.entraStatoAggiungi();
         }
 
-        
         @Override
         public void next(Event e) {
             if (e instanceof ConfermaEvent) {
@@ -67,7 +75,7 @@ public class AutomaCrud implements State {
                 stato = new Aggiungi();
                 ui.entraStatoAggiungi();
             } else if (e instanceof SelezionaEvent) {
-                
+
             } else if (e instanceof ModificaEvent) {
                 ui.entraStatoModifica();
                 stato = new Modifica();
