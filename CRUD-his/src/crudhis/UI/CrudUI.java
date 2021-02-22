@@ -34,6 +34,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
 
         //table
         jTable.setVisible(true);
+        jScrollPane1.setVisible(true);
     }
 
     @Override
@@ -56,6 +57,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
 
         //table
         jTable.setVisible(false);
+        jScrollPane1.setVisible(false);
     }
 
     @Override
@@ -78,6 +80,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         //table
         jButtonSeleziona.setVisible(true);
         jTable.setVisible(true);
+        jScrollPane1.setVisible(true);
     }
 
     @Override
@@ -100,6 +103,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         //table
         jButtonSeleziona.setVisible(false);
         jTable.setVisible(false);
+        jScrollPane1.setVisible(false);
     }
 
     @Override
@@ -123,6 +127,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         //table
         jButtonSeleziona.setVisible(true);
         jTable.setVisible(true);
+        jScrollPane1.setVisible(true);
     }
 
     /**
@@ -290,7 +295,7 @@ public class CrudUI extends javax.swing.JFrame implements Automabile {
         automa.next(new AddEvent());
         jTextFieldCodice.setText(null);
         jTextFieldDescrizione.setText(null);
-        
+
     }//GEN-LAST:event_jButtonNuovaActionPerformed
 
     private void jButtonAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnnullaActionPerformed
